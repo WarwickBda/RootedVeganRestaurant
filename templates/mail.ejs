@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+	<title>Rooted Mailing List</title>
+</head>
+
+<style type="text/css">
+    form {
+        border: solid gray 2px;
+    }
+</style>
+
+<body>
+	<h1>Join our Mailing List</h1>
+    <form action="http://localhost:<%- portNumber %>/mail" method="post">
+       <div> 
+        <strong>First Name: </strong><input type="text" id="firstName" name="firstName">
+        <strong>Last Name: </strong><input type="text" id="lastName" name="lastName"><br>
+        <strong>Email Address: </strong><input type="email" id="email" name="email"> <br>
+		<strong>Birthday: </strong><input type="date" id="birthday" name="birthday"><br>
+		
+    </div>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+    </form>
+   <hr>
+    <div id="footer">
+        <a href="../">Return to our Home Page</a>
+    </div>
+</body>
+
+</html>

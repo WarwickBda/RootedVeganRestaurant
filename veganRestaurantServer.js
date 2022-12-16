@@ -5,7 +5,7 @@ const path = require("path");
 const express = require("express");
 const ejs = require("ejs")
 const bodyParser = require("body-parser"); 
-const portNumber = process.argv[2];
+const portNumber = 3000;
 const app = express();
 require("dotenv").config({ path: path.resolve(__dirname, './.env') });
 const userName = process.env.MONGO_DB_USERNAME;
@@ -16,7 +16,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 async function main() {
     const uri = `mongodb+srv://${userName}:${password}@cluster0.djzkhh3.mongodb.net/?retryWrites=true&w=majority`;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-    app.use(bodyParser.urlencoded({extended:false}));
+    app.use(bodyParser.urlencoded({extended:false})); 
     try {
         client.connect();
         process.stdin.setEncoding("utf8");
